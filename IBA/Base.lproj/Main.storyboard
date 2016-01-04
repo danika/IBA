@@ -3,7 +3,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Display-Light.otf">
+            <string>SFUIDisplay-Light</string>
+        </mutableArray>
+        <mutableArray key="SF-UI-Text-Light.otf">
+            <string>SFUIText-Light</string>
+        </mutableArray>
+        <mutableArray key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,12 +28,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szc-Qq-fbH">
+                                <rect key="frame" x="103" y="125" width="169.5" height="48"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-hg-PBM" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
+                                <rect key="frame" x="112" y="309" width="151" height="49"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="16" maxX="20" maxY="16"/>
+                                <state key="normal" title="ADD CONTACTS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addContactsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aV3-5t-zOT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who would you like to keep track of?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yok-4Z-PnK">
+                                <rect key="frame" x="51" y="181" width="273" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlY-yV-JdW">
+                                <rect key="frame" x="16" y="20" width="343" height="99.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afH-rp-5H7">
+                                <rect key="frame" x="16" y="202" width="343" height="99"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="szc-Qq-fbH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="17s-PB-WjC"/>
+                            <constraint firstItem="szc-Qq-fbH" firstAttribute="centerX" secondItem="NlY-yV-JdW" secondAttribute="centerX" id="2Rl-gD-8El"/>
+                            <constraint firstItem="485-hg-PBM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9ku-q3-gbr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NlY-yV-JdW" secondAttribute="trailing" id="Dn5-4n-p8q"/>
+                            <constraint firstItem="yok-4Z-PnK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EAH-Zv-MZp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NlY-yV-JdW" secondAttribute="leading" id="Ihk-xz-C2Q"/>
+                            <constraint firstItem="NlY-yV-JdW" firstAttribute="height" secondItem="afH-rp-5H7" secondAttribute="height" id="Qas-4H-KqV"/>
+                            <constraint firstItem="afH-rp-5H7" firstAttribute="top" secondItem="yok-4Z-PnK" secondAttribute="bottom" constant="1.5" id="Qps-AX-58r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="afH-rp-5H7" secondAttribute="trailing" id="RGu-ez-ssn"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yok-4Z-PnK" secondAttribute="trailing" constant="16" id="bat-Od-yUi"/>
+                            <constraint firstItem="yok-4Z-PnK" firstAttribute="top" secondItem="szc-Qq-fbH" secondAttribute="bottom" constant="8" id="dtp-Ur-6aq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="afH-rp-5H7" secondAttribute="leading" id="eNv-6K-2ez"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="szc-Qq-fbH" secondAttribute="trailing" constant="16" id="laE-Ld-kjr"/>
+                            <constraint firstItem="NlY-yV-JdW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mCa-Dg-Iof"/>
+                            <constraint firstItem="485-hg-PBM" firstAttribute="top" secondItem="afH-rp-5H7" secondAttribute="bottom" constant="8" id="tid-Ym-fUE"/>
+                            <constraint firstItem="485-hg-PBM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uWY-4y-aLO"/>
+                            <constraint firstItem="yok-4Z-PnK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="upS-Qi-rJb"/>
+                            <constraint firstItem="szc-Qq-fbH" firstAttribute="top" secondItem="NlY-yV-JdW" secondAttribute="bottom" constant="5.5" id="v0k-S8-QGp"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="337.5"/>
         </scene>
     </scenes>
 </document>
