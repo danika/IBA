@@ -28,10 +28,15 @@
 		930B4C0A1C3AC857008D22D8 /* SF-UI-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 930B4BF51C3AC857008D22D8 /* SF-UI-Text-RegularItalic.otf */; };
 		930B4C0B1C3AC857008D22D8 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 930B4BF61C3AC857008D22D8 /* SF-UI-Text-Semibold.otf */; };
 		930B4C0C1C3AC857008D22D8 /* SF-UI-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 930B4BF71C3AC857008D22D8 /* SF-UI-Text-SemiboldItalic.otf */; };
-		930B4C0F1C3ACE2B008D22D8 /* IBAContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C0E1C3ACE2B008D22D8 /* IBAContact.swift */; };
-		930B4C151C3AD43B008D22D8 /* IBARoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C141C3AD43B008D22D8 /* IBARoundedButton.swift */; };
+		930B4C191C3AEC1E008D22D8 /* IBAContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C181C3AEC1E008D22D8 /* IBAContact.swift */; };
+		930B4C1B1C3AEC2A008D22D8 /* IBARoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C1A1C3AEC2A008D22D8 /* IBARoundedButton.swift */; };
+		930B4C1D1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C1C1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift */; };
+		930B4C1F1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C1E1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift */; };
+		930B4C211C3AF6E5008D22D8 /* IBAAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C201C3AF6E5008D22D8 /* IBAAppData.swift */; };
+		930B4C231C3B0E1B008D22D8 /* IBAOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */; };
+		930B4C251C3B1590008D22D8 /* IBAReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C241C3B1590008D22D8 /* IBAReplaceSegue.swift */; };
+		930B4C271C3B1864008D22D8 /* IBAOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */; };
 		93DDAF611C37284E001D9362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDAF601C37284E001D9362 /* AppDelegate.swift */; };
-		93DDAF631C37284E001D9362 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDAF621C37284E001D9362 /* ViewController.swift */; };
 		93DDAF661C37284E001D9362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF641C37284E001D9362 /* Main.storyboard */; };
 		93DDAF681C37284E001D9362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF671C37284E001D9362 /* Assets.xcassets */; };
 		93DDAF6B1C37284E001D9362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF691C37284E001D9362 /* LaunchScreen.storyboard */; };
@@ -78,11 +83,16 @@
 		930B4BF51C3AC857008D22D8 /* SF-UI-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Text-RegularItalic.otf"; path = "Resources/Fonts/SF-UI-Text-RegularItalic.otf"; sourceTree = "<group>"; };
 		930B4BF61C3AC857008D22D8 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Text-Semibold.otf"; path = "Resources/Fonts/SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 		930B4BF71C3AC857008D22D8 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Text-SemiboldItalic.otf"; path = "Resources/Fonts/SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
-		930B4C0E1C3ACE2B008D22D8 /* IBAContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBAContact.swift; sourceTree = "<group>"; };
-		930B4C141C3AD43B008D22D8 /* IBARoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBARoundedButton.swift; sourceTree = "<group>"; };
+		930B4C181C3AEC1E008D22D8 /* IBAContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAContact.swift; path = Models/IBAContact.swift; sourceTree = "<group>"; };
+		930B4C1A1C3AEC2A008D22D8 /* IBARoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBARoundedButton.swift; path = Views/IBARoundedButton.swift; sourceTree = "<group>"; };
+		930B4C1C1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAContactsSetupViewController.swift; path = "View Controllers/IBAContactsSetupViewController.swift"; sourceTree = "<group>"; };
+		930B4C1E1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAContactIntervalSetupViewController.swift; path = "View Controllers/IBAContactIntervalSetupViewController.swift"; sourceTree = "<group>"; };
+		930B4C201C3AF6E5008D22D8 /* IBAAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAAppData.swift; path = Models/IBAAppData.swift; sourceTree = "<group>"; };
+		930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewViewController.swift; path = "View Controllers/IBAOverviewViewController.swift"; sourceTree = "<group>"; };
+		930B4C241C3B1590008D22D8 /* IBAReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBAReplaceSegue.swift; sourceTree = "<group>"; };
+		930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewTableViewCell.swift; path = Views/IBAOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		93DDAF5D1C37284E001D9362 /* IBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DDAF601C37284E001D9362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93DDAF621C37284E001D9362 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93DDAF651C37284E001D9362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93DDAF671C37284E001D9362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93DDAF6A1C37284E001D9362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,7 +169,8 @@
 		930B4C0D1C3ACC4C008D22D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				930B4C141C3AD43B008D22D8 /* IBARoundedButton.swift */,
+				930B4C1A1C3AEC2A008D22D8 /* IBARoundedButton.swift */,
+				930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,7 +178,8 @@
 		930B4C101C3AD329008D22D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				930B4C0E1C3ACE2B008D22D8 /* IBAContact.swift */,
+				930B4C181C3AEC1E008D22D8 /* IBAContact.swift */,
+				930B4C201C3AF6E5008D22D8 /* IBAAppData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -175,7 +187,9 @@
 		930B4C111C3AD331008D22D8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				93DDAF621C37284E001D9362 /* ViewController.swift */,
+				930B4C1C1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift */,
+				930B4C1E1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift */,
+				930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +226,7 @@
 				930B4C111C3AD331008D22D8 /* View Controllers */,
 				93DDAF671C37284E001D9362 /* Assets.xcassets */,
 				93DDAF6C1C37284E001D9362 /* Info.plist */,
+				930B4C241C3B1590008D22D8 /* IBAReplaceSegue.swift */,
 			);
 			path = IBA;
 			sourceTree = "<group>";
@@ -386,10 +401,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93DDAF631C37284E001D9362 /* ViewController.swift in Sources */,
+				930B4C211C3AF6E5008D22D8 /* IBAAppData.swift in Sources */,
+				930B4C251C3B1590008D22D8 /* IBAReplaceSegue.swift in Sources */,
+				930B4C1D1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift in Sources */,
+				930B4C231C3B0E1B008D22D8 /* IBAOverviewViewController.swift in Sources */,
+				930B4C1B1C3AEC2A008D22D8 /* IBARoundedButton.swift in Sources */,
 				93DDAF611C37284E001D9362 /* AppDelegate.swift in Sources */,
-				930B4C151C3AD43B008D22D8 /* IBARoundedButton.swift in Sources */,
-				930B4C0F1C3ACE2B008D22D8 /* IBAContact.swift in Sources */,
+				930B4C1F1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift in Sources */,
+				930B4C271C3B1864008D22D8 /* IBAOverviewTableViewCell.swift in Sources */,
+				930B4C191C3AEC1E008D22D8 /* IBAContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
