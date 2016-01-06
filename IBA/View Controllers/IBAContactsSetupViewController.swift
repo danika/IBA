@@ -12,13 +12,23 @@ import ContactsUI
 
 class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate {
     
+    @IBOutlet weak var titleLabel: UILabel!
     var contactStore = CNContactStore()
     
     @IBOutlet weak var addContactsButton: IBARoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //set title
+        if let font = UIFont(name: "SFUIDisplay-Light", size: 40) {
+            let attributedTitleString = NSMutableAttributedString(string: "It's been ", attributes: [NSFontAttributeName:font])
+            
+            if let italicFont = UIFont(name: "SFUIText-LightItalic", size: 40) {
+                attributedTitleString.appendAttributedString(NSAttributedString(string: "ages!", attributes: [NSFontAttributeName:italicFont]))
+                titleLabel.attributedText = attributedTitleString
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

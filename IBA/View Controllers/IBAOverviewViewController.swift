@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,6 +18,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
     }
+    
     
     // MARK: UITableViewDataSource
     
@@ -57,6 +59,22 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let markAsSeen = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Seen") { (rowAction, indexPath) -> Void in
+            self.showSetDateAlertForContactAtIndexPath(indexPath)
+        }
+        markAsSeen.backgroundColor = UIColor(hexString:"83D9EA")
+        
+        return [markAsSeen]
+    }
+    
+    // MARK: actions
+    
+    func showSetDateAlertForContactAtIndexPath(indexPath: NSIndexPath) {
+        //show alert
+        NSLog("marked as seen")
     }
     
 }

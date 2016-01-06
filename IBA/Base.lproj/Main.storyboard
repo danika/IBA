@@ -20,7 +20,6 @@
             <string>SFUIText-Medium</string>
             <string>SFUIText-Medium</string>
             <string>SFUIText-Medium</string>
-            <string>SFUIText-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -37,26 +36,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="485-hg-PBM" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
-                                <rect key="frame" x="112" y="309" width="151" height="49"/>
+                                <rect key="frame" x="121" y="309" width="134" height="49"/>
                                 <color key="backgroundColor" red="0.51372549019607838" green="0.85098039215686272" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="16" maxX="20" maxY="16"/>
-                                <state key="normal" title="ADD CONTACTS">
+                                <state key="normal" title="ADD FRIENDS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="addContactsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aV3-5t-zOT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szc-Qq-fbH">
-                                <rect key="frame" x="103" y="96" width="169.5" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's been ages!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szc-Qq-fbH">
+                                <rect key="frame" x="66" y="96" width="242.5" height="48"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who would you like to keep track of?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yok-4Z-PnK">
-                                <rect key="frame" x="51" y="143.5" width="273" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there people you haven't seen in a while? Add them here so you know who's due for a visit!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yok-4Z-PnK">
+                                <rect key="frame" x="33" y="152" width="309.5" height="57.5"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,7 +69,7 @@
                             <constraint firstItem="szc-Qq-fbH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LxM-fM-NLD"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yok-4Z-PnK" secondAttribute="trailing" constant="16" id="bat-Od-yUi"/>
                             <constraint firstItem="szc-Qq-fbH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="76" id="dUE-f9-9ab"/>
-                            <constraint firstItem="yok-4Z-PnK" firstAttribute="top" secondItem="szc-Qq-fbH" secondAttribute="bottom" id="dtp-Ur-6aq"/>
+                            <constraint firstItem="yok-4Z-PnK" firstAttribute="top" secondItem="szc-Qq-fbH" secondAttribute="bottom" constant="8" id="dtp-Ur-6aq"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="szc-Qq-fbH" secondAttribute="trailing" constant="16" id="laE-Ld-kjr"/>
                             <constraint firstItem="485-hg-PBM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uWY-4y-aLO"/>
                             <constraint firstItem="yok-4Z-PnK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="upS-Qi-rJb"/>
@@ -80,6 +79,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addContactsButton" destination="485-hg-PBM" id="ddP-Qu-lNT"/>
+                        <outlet property="titleLabel" destination="szc-Qq-fbH" id="IIy-Zk-mf0"/>
                         <segue destination="dk8-TM-YYO" kind="show" identifier="moveToContactIntervalSetup" customClass="IBAReplaceSegue" customModule="IBA" customModuleProvider="target" id="v7D-OP-fi7"/>
                     </connections>
                 </viewController>
@@ -99,47 +99,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ideally, you'd like to see each of these people every..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej0-VQ-PKR">
-                                <rect key="frame" x="44" y="152" width="286" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ideally, you'd see each person every..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej0-VQ-PKR">
+                                <rect key="frame" x="46" y="152" width="282" height="19.5"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-vt-X0w">
-                                <rect key="frame" x="27" y="190" width="320" height="216"/>
+                                <rect key="frame" x="27" y="171" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dk8-TM-YYO" id="kVg-VO-WeA"/>
                                     <outlet property="delegate" destination="dk8-TM-YYO" id="Ksu-P2-9Nv"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erv-eL-680" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
-                                <rect key="frame" x="99" y="414" width="178" height="49"/>
+                                <rect key="frame" x="120" y="395.5" width="135" height="49"/>
                                 <color key="backgroundColor" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="16" maxX="20" maxY="16"/>
-                                <state key="normal" title="SET FOR EVERYONE"/>
+                                <state key="normal" title="LOOKS GOOD"/>
                                 <connections>
                                     <action selector="setForEveryoneButtonTapped:" destination="dk8-TM-YYO" eventType="touchUpInside" id="02q-2m-eND"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk2-72-8Jk" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
-                                <rect key="frame" x="80" y="498.5" width="216" height="49"/>
-                                <color key="backgroundColor" red="0.38039215686274508" green="0.50196078431372548" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="20" minY="16" maxX="20" maxY="16"/>
-                                <state key="normal" title="CUSTOMIZE PER PERSON"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZU-tM-ETb">
-                                <rect key="frame" x="176" y="471" width="22.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Define &quot;ages&quot;..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn1-Vf-nXh">
+                                <rect key="frame" x="32" y="96" width="311" height="48"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Step" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn1-Vf-nXh">
-                                <rect key="frame" x="105" y="96" width="165" height="48"/>
-                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We understand—some people are special. You can customize the length of an age for individual friends on the next page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZU-tM-ETb">
+                                <rect key="frame" x="48" y="584" width="279" height="50.5"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -148,18 +140,19 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ej0-VQ-PKR" secondAttribute="trailing" constant="16" id="43G-eQ-yH4"/>
                             <constraint firstItem="Ej0-VQ-PKR" firstAttribute="top" secondItem="Bn1-Vf-nXh" secondAttribute="bottom" constant="8" id="6YW-Ne-mjn"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="DZU-tM-ETb" secondAttribute="trailing" constant="32" id="7SZ-ZR-qPS"/>
+                            <constraint firstItem="DZU-tM-ETb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uew-ee-G1k" secondAttribute="leadingMargin" constant="32" id="9Ue-sN-FD6"/>
                             <constraint firstItem="Erv-eL-680" firstAttribute="top" secondItem="AnC-vt-X0w" secondAttribute="bottom" constant="8" id="9gr-yb-rV5"/>
                             <constraint firstItem="Ej0-VQ-PKR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uew-ee-G1k" secondAttribute="leadingMargin" constant="16" id="AbI-Iq-bF1"/>
                             <constraint firstItem="Erv-eL-680" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="Cn2-2K-fEB"/>
-                            <constraint firstItem="DZU-tM-ETb" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="EmO-hQ-7w9"/>
+                            <constraint firstItem="k7W-fv-oeP" firstAttribute="top" secondItem="DZU-tM-ETb" secondAttribute="bottom" constant="32" id="D3Z-zG-4Sg"/>
                             <constraint firstItem="Bn1-Vf-nXh" firstAttribute="top" secondItem="x31-Lv-hd2" secondAttribute="bottom" constant="76" id="LI3-33-SSC"/>
-                            <constraint firstItem="DZU-tM-ETb" firstAttribute="top" secondItem="Erv-eL-680" secondAttribute="bottom" constant="8" id="Qgf-G3-eqx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bn1-Vf-nXh" secondAttribute="trailing" constant="16" id="SO8-HH-8yU"/>
                             <constraint firstItem="AnC-vt-X0w" firstAttribute="top" secondItem="Ej0-VQ-PKR" secondAttribute="bottom" id="UtS-m4-0JO"/>
-                            <constraint firstItem="sk2-72-8Jk" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="Zn7-oZ-1gm"/>
-                            <constraint firstItem="sk2-72-8Jk" firstAttribute="top" secondItem="DZU-tM-ETb" secondAttribute="bottom" constant="8" id="Zwi-oy-eME"/>
+                            <constraint firstItem="DZU-tM-ETb" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="W3P-LP-huY"/>
+                            <constraint firstItem="Bn1-Vf-nXh" firstAttribute="leading" secondItem="uew-ee-G1k" secondAttribute="leadingMargin" constant="16" id="bFd-5v-wcQ"/>
                             <constraint firstItem="AnC-vt-X0w" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="f6I-SZ-TxE"/>
                             <constraint firstItem="Ej0-VQ-PKR" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="sfN-gZ-Vaa"/>
-                            <constraint firstItem="Bn1-Vf-nXh" firstAttribute="centerX" secondItem="uew-ee-G1k" secondAttribute="centerX" id="vY5-zc-YNw"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -189,8 +182,8 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Overview" id="QNA-KA-83q">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="vDh-Az-CWG">
-                                            <color key="tintColor" red="0.28627450980392155" green="0.14117647058823529" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="vDh-Az-CWG">
+                                            <color key="tintColor" red="0.51372551918029785" green="0.85098040103912354" blue="0.91764706373214722" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
