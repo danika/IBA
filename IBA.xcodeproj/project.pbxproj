@@ -37,6 +37,7 @@
 		930B4C231C3B0E1B008D22D8 /* IBAOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */; };
 		930B4C251C3B1590008D22D8 /* IBAReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C241C3B1590008D22D8 /* IBAReplaceSegue.swift */; };
 		930B4C271C3B1864008D22D8 /* IBAOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */; };
+		931D3B4B1C403DE500CDBFF1 /* IBAContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D3B4A1C403DE500CDBFF1 /* IBAContactViewModel.swift */; };
 		93DDAF611C37284E001D9362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDAF601C37284E001D9362 /* AppDelegate.swift */; };
 		93DDAF661C37284E001D9362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF641C37284E001D9362 /* Main.storyboard */; };
 		93DDAF681C37284E001D9362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF671C37284E001D9362 /* Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewViewController.swift; path = "View Controllers/IBAOverviewViewController.swift"; sourceTree = "<group>"; };
 		930B4C241C3B1590008D22D8 /* IBAReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBAReplaceSegue.swift; sourceTree = "<group>"; };
 		930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewTableViewCell.swift; path = Views/IBAOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		931D3B4A1C403DE500CDBFF1 /* IBAContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAContactViewModel.swift; path = "View Models/IBAContactViewModel.swift"; sourceTree = "<group>"; };
 		93DDAF5D1C37284E001D9362 /* IBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DDAF601C37284E001D9362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DDAF651C37284E001D9362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		931D3B4C1C403DF000CDBFF1 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				931D3B4A1C403DE500CDBFF1 /* IBAContactViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
 		93DDAF541C37284E001D9362 = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 				93DDAF641C37284E001D9362 /* Main.storyboard */,
 				93DDAF601C37284E001D9362 /* AppDelegate.swift */,
 				930B4C101C3AD329008D22D8 /* Models */,
+				931D3B4C1C403DF000CDBFF1 /* View Models */,
 				930B4C0D1C3ACC4C008D22D8 /* Views */,
 				930B4C111C3AD331008D22D8 /* View Controllers */,
 				93DDAF671C37284E001D9362 /* Assets.xcassets */,
@@ -476,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931D3B4B1C403DE500CDBFF1 /* IBAContactViewModel.swift in Sources */,
 				930B4C211C3AF6E5008D22D8 /* IBAAppData.swift in Sources */,
 				930B4C251C3B1590008D22D8 /* IBAReplaceSegue.swift in Sources */,
 				930B4C1D1C3AEC39008D22D8 /* IBAContactsSetupViewController.swift in Sources */,

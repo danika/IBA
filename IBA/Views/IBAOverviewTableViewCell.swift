@@ -12,12 +12,12 @@ class IBAOverviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
-
+    @IBOutlet weak var colorView: UIView!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+    
         self.preservesSuperviewLayoutMargins = false
         self.layoutMargins = UIEdgeInsetsZero
     }
-    
 }

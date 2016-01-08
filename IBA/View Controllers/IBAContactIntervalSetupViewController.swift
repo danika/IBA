@@ -82,6 +82,31 @@ class IBAContactIntervalSetupViewController: UIViewController, UIPickerViewDataS
     // MARK: button behavior
     
     @IBAction func setForEveryoneButtonTapped(sender: AnyObject) {
+        let number = self.contactIntervalPickerView.selectedRowInComponent(0)+1
+        let type = self.contactIntervalPickerView.selectedRowInComponent(1)
+        let timeInterval = NSDateComponents()
+        
+        switch type {
+        case 0: //days
+            timeInterval.day = number
+            
+        case 1: //weeks
+            timeInterval.day = number*7
+            
+        case 2: //months
+            timeInterval.month = number
+            
+        case 3: //years
+            timeInterval.year = number
+            
+        default:
+            break
+        }
+        
+        for storedContact in AppDelegate.getAppDelegate().appData.storedContacts {
+            storedContact.desiredContactInterval = timeInterval
+        }
+        
         self.performSegueWithIdentifier("moveToOverview", sender: self)
     }
     

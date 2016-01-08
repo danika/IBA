@@ -9,11 +9,12 @@
 import Foundation
 
 class IBAContact {
+    
     // MARK: properties
     
     var name: String
-    var desiredContactFrequency: NSTimeInterval?
     var dateLastContacted: NSDate?
+    var desiredContactInterval: NSDateComponents?
     
     // MARK: initialization
     
@@ -24,18 +25,4 @@ class IBAContact {
             return nil
         }
     }
-    
-//    init?(name: String, desiredContactFrequency: NSTimeInterval) {
-//        self.name = name
-//        self.desiredContactFrequency = desiredContactFrequency
-//        
-//        let today = NSDate()
-//        
-//        self.dateLastContacted = NSDate(timeInterval: -self.desiredContactFrequency, sinceDate: today)
-//        
-//        if name.isEmpty || desiredContactFrequency <= 0 {
-//            return nil
-//        }
-//    }
-    
 }

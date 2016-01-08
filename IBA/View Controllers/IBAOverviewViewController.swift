@@ -8,11 +8,31 @@
 
 import UIKit
 import DynamicColor
+import QuartzCore
 
 class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let unknownDate = "???"
+    
+    let dateFormatter = NSDateFormatter()
+    var lastContactedTextField: UITextField?
+    let lastContactedDatePicker = UIDatePicker()
+    
+    var contactViewModels = [IBAContactViewModel]()
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        
+        lastContactedDatePicker.backgroundColor = UIColor.whiteColor()
+        lastContactedDatePicker.datePickerMode = UIDatePickerMode.Date
+        lastContactedDatePicker.addTarget(self, action: "updateTextField", forControlEvents: UIControlEvents.ValueChanged)
+        
+        for storedContact in AppDelegate.getAppDelegate().appData.storedContacts {
+            contactViewModels.append(IBAContactViewModel(contact: storedContact))
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +50,15 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         let contact = AppDelegate.getAppDelegate().appData.storedContacts[indexPath.row]
         
         cell.nameLabel.text = contact.name
-        cell.lastSeenLabel.text = "last seen: \(contact.dateLastContacted ?? unknownDate)"
+        if let dateLastContacted = contact.dateLastContacted {
+            cell.lastSeenLabel.text = "last seen: \(self.dateFormatter.stringFromDate(dateLastContacted))"
+            
+            let viewModel = self.contactViewModels[indexPath.row]
+            cell.colorView.backgroundColor = viewModel.color
+            
+        } else {
+            cell.lastSeenLabel.text = "last seen: ???"
+        }
         
         return cell
     }
@@ -62,9 +90,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let markAsSeen = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Seen") { (rowAction, indexPath) -> Void in
-            self.showSetDateAlertForContactAtIndexPath(indexPath)
-        }
+        let markAsSeen = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Seen") { (rowAction, indexPath) -> Void in self.showSetDateAlertForContactAtIndexPath(indexPath) }
         markAsSeen.backgroundColor = UIColor(hexString:"83D9EA")
         
         return [markAsSeen]
@@ -73,8 +99,50 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: actions
     
     func showSetDateAlertForContactAtIndexPath(indexPath: NSIndexPath) {
+        let tappedContact = AppDelegate.getAppDelegate().appData.storedContacts[indexPath.row]
+        
         //show alert
-        NSLog("marked as seen")
+        let alertController = UIAlertController(title: "Last Seen", message: "When was your last visit with \(tappedContact.name)?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            
+            if let chosenDateText = self.lastContactedTextField?.text {
+                tappedContact.dateLastContacted = self.dateFormatter.dateFromString(chosenDateText)
+                
+            
+                AppDelegate.getAppDelegate().appData.storedContacts.removeAtIndex(indexPath.row)
+                AppDelegate.getAppDelegate().appData.storedContacts.append(tappedContact)
+                
+                self.contactViewModels.removeAtIndex(indexPath.row)
+                self.contactViewModels.append(IBAContactViewModel(contact: tappedContact))
+                
+                //find the correct index path for the chosen date
+                let lastIndexPath = NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0)-1, inSection: 0)
+                
+                self.tableView.beginUpdates()
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+                self.tableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: UITableViewRowAnimation.Right)
+                self.tableView.endUpdates()
+            }
+            
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
+            NSLog("Cancel Button Pressed")
+        }
+        alertController.addAction(ok)
+        alertController.addAction(cancel)
+        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            self.lastContactedTextField = textField
+            self.lastContactedTextField?.text = self.dateFormatter.stringFromDate(NSDate())
+            
+            self.lastContactedDatePicker.date = NSDate()
+            self.lastContactedTextField?.inputView = self.lastContactedDatePicker
+            
+        }
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func updateTextField() {
+        self.lastContactedTextField?.text = self.dateFormatter.stringFromDate(self.lastContactedDatePicker.date)
+    }
 }
