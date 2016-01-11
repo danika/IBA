@@ -12,7 +12,7 @@ class IBAContactViewModel {
     
     // MARK: properties
     
-    static let lateColor = UIColor(hexString: "E90013")
+    static let lateColor = UIColor(hexString: "CC2456")
     static let dueColor = UIColor(hexString: "F68100")
     static let goodColor = UIColor(hexString: "7ABF2E")
     

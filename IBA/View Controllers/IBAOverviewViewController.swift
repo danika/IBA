@@ -19,9 +19,11 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     var lastContactedTextField: UITextField?
     let lastContactedDatePicker = UIDatePicker()
     
-    var contactViewModels = [IBAContactViewModel]()
+    var contactViewModels: [IBAContactViewModel]
     
     required init?(coder aDecoder: NSCoder) {
+        contactViewModels = [IBAContactViewModel]()
+        
         super.init(coder: aDecoder)
 
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -40,6 +42,16 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.tableFooterView = UIView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //refresh view models
+        contactViewModels = [IBAContactViewModel]()
+        for storedContact in AppDelegate.getAppDelegate().appData.storedContacts {
+            contactViewModels.append(IBAContactViewModel(contact: storedContact))
+        }
+        tableView.reloadData()
+    }
     
     // MARK: UITableViewDataSource
     
@@ -48,6 +60,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! IBAOverviewTableViewCell
         
+        //to do: consolidate these
         let contact = AppDelegate.getAppDelegate().appData.storedContacts[indexPath.row]
         let viewModel = self.contactViewModels[indexPath.row]
         
@@ -114,24 +127,21 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
-            if let chosenDateText = self.lastContactedTextField?.text {
-                tappedContact.dateLastContacted = self.dateFormatter.dateFromString(chosenDateText)
-                
+            tappedContact.dateLastContacted = self.lastContactedDatePicker.date
             
-                AppDelegate.getAppDelegate().appData.storedContacts.removeAtIndex(indexPath.row)
-                AppDelegate.getAppDelegate().appData.storedContacts.append(tappedContact)
-                
-                self.contactViewModels.removeAtIndex(indexPath.row)
-                self.contactViewModels.append(IBAContactViewModel(contact: tappedContact))
-                
-                //find the correct index path for the chosen date
-                let lastIndexPath = NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0)-1, inSection: 0)
-                
-                self.tableView.beginUpdates()
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
-                self.tableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: UITableViewRowAnimation.Right)
-                self.tableView.endUpdates()
-            }
+            AppDelegate.getAppDelegate().appData.storedContacts.removeAtIndex(indexPath.row)
+            AppDelegate.getAppDelegate().appData.storedContacts.append(tappedContact)
+            
+            self.contactViewModels.removeAtIndex(indexPath.row)
+            self.contactViewModels.append(IBAContactViewModel(contact: tappedContact))
+            
+            //find the correct index path for the chosen date
+            let lastIndexPath = NSIndexPath(forRow: self.tableView.numberOfRowsInSection(0)-1, inSection: 0)
+            
+            self.tableView.beginUpdates()
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            self.tableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: UITableViewRowAnimation.Right)
+            self.tableView.endUpdates()
             
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
@@ -152,5 +162,26 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateTextField() {
         self.lastContactedTextField?.text = self.dateFormatter.stringFromDate(self.lastContactedDatePicker.date)
+    }
+    
+    // MARK: segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editContact" {
+            if let cell = sender as? UITableViewCell {
+                let destinationViewController = segue.destinationViewController as! IBAEditContactViewController
+                destinationViewController.optionalIndex = tableView.indexPathForCell(cell)?.row
+            }
+        }
+    }
+    
+    
+    @IBAction func cancelEdits(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func saveContact(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func deleteContact(segue:UIStoryboardSegue) {
     }
 }
