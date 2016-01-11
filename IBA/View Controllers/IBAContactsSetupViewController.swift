@@ -74,9 +74,8 @@ class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate 
     // MARK: CNContactPickerDelegate
 
     func contactPicker(picker: CNContactPickerViewController, didSelectContacts contacts: [CNContact]) {
-        NSLog("selected contacts")
         for contact in contacts {
-            if let storedContact = IBAContact(name: contact.givenName) {
+            if let storedContact = IBAContact(contact: contact) {
                 AppDelegate.getAppDelegate().appData.storedContacts.append(storedContact)
             }
         }

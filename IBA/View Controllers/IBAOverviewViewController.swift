@@ -12,6 +12,7 @@ import QuartzCore
 
 class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
     let dateFormatter = NSDateFormatter()
@@ -48,16 +49,23 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! IBAOverviewTableViewCell
         
         let contact = AppDelegate.getAppDelegate().appData.storedContacts[indexPath.row]
+        let viewModel = self.contactViewModels[indexPath.row]
         
+        if let thumbnail = viewModel.thumbnail {
+            cell.thumbnailView.image = thumbnail
+        } else {
+            cell.thumbnailView.image = nil
+        }
         cell.nameLabel.text = contact.name
+        cell.colorView.backgroundColor = viewModel.color
+        
         if let dateLastContacted = contact.dateLastContacted {
             cell.lastSeenLabel.text = "last seen: \(self.dateFormatter.stringFromDate(dateLastContacted))"
-            
-            let viewModel = self.contactViewModels[indexPath.row]
-            cell.colorView.backgroundColor = viewModel.color
+            cell.visitByLabel.text = "visit by: \(self.dateFormatter.stringFromDate(viewModel.idealContactDate!))"
             
         } else {
             cell.lastSeenLabel.text = "last seen: ???"
+            cell.visitByLabel.text = ""
         }
         
         return cell
