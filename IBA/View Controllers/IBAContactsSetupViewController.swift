@@ -48,10 +48,9 @@ class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate 
                 if access {
                     completionHandler(accessGranted: access)
                 } else if authorizationStatus == CNAuthorizationStatus.Denied {
-                    NSLog("no access to contacts :(")
+                    completionHandler(accessGranted: false)
                 }
             })
-            
         default:
             completionHandler(accessGranted: false)
         }
@@ -60,15 +59,17 @@ class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate 
     // MARK: button behavior
     
     @IBAction func addContactsButtonTapped(sender: AnyObject) {
-        self.requestAccess { (accessGranted) -> Void in
-            if accessGranted {
-                let contactPickerViewController = CNContactPickerViewController()
-                
-                contactPickerViewController.delegate = self
-                
-                self.presentViewController(contactPickerViewController, animated: true, completion: nil)
-            }
-        }
+        //why is this a problem?
+        
+//        self.requestAccess { (accessGranted) -> Void in
+//            if accessGranted {
+//                let contactPickerViewController = CNContactPickerViewController()
+//                contactPickerViewController.delegate = self
+//                self.presentViewController(contactPickerViewController, animated: true, completion: nil)
+//            } else {
+                self.performSegueWithIdentifier("addContact", sender: self)
+//            }
+//        }
     }
     
     // MARK: CNContactPickerDelegate

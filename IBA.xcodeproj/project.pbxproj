@@ -37,6 +37,7 @@
 		930B4C231C3B0E1B008D22D8 /* IBAOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */; };
 		930B4C271C3B1864008D22D8 /* IBAOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */; };
 		931D3B4B1C403DE500CDBFF1 /* IBAContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D3B4A1C403DE500CDBFF1 /* IBAContactViewModel.swift */; };
+		9346DE1F1C459DD0008C031A /* IBAAddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346DE1E1C459DD0008C031A /* IBAAddContactViewController.swift */; };
 		93D82BC61C4448F80084A51C /* IBAEditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D82BC51C4448F80084A51C /* IBAEditContactViewController.swift */; };
 		93DDAF611C37284E001D9362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DDAF601C37284E001D9362 /* AppDelegate.swift */; };
 		93DDAF661C37284E001D9362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DDAF641C37284E001D9362 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewViewController.swift; path = "View Controllers/IBAOverviewViewController.swift"; sourceTree = "<group>"; };
 		930B4C261C3B1864008D22D8 /* IBAOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAOverviewTableViewCell.swift; path = Views/IBAOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		931D3B4A1C403DE500CDBFF1 /* IBAContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAContactViewModel.swift; path = "View Models/IBAContactViewModel.swift"; sourceTree = "<group>"; };
+		9346DE1E1C459DD0008C031A /* IBAAddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAAddContactViewController.swift; path = "View Controllers/IBAAddContactViewController.swift"; sourceTree = "<group>"; };
 		93D82BC51C4448F80084A51C /* IBAEditContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBAEditContactViewController.swift; path = "View Controllers/IBAEditContactViewController.swift"; sourceTree = "<group>"; };
 		93DDAF5D1C37284E001D9362 /* IBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DDAF601C37284E001D9362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				930B4C1E1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift */,
 				930B4C221C3B0E1B008D22D8 /* IBAOverviewViewController.swift */,
 				93D82BC51C4448F80084A51C /* IBAEditContactViewController.swift */,
+				9346DE1E1C459DD0008C031A /* IBAAddContactViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				93D82BC61C4448F80084A51C /* IBAEditContactViewController.swift in Sources */,
 				930B4C1B1C3AEC2A008D22D8 /* IBARoundedButton.swift in Sources */,
 				93DDAF611C37284E001D9362 /* AppDelegate.swift in Sources */,
+				9346DE1F1C459DD0008C031A /* IBAAddContactViewController.swift in Sources */,
 				930B4C1F1C3AECB0008D22D8 /* IBAContactIntervalSetupViewController.swift in Sources */,
 				930B4C271C3B1864008D22D8 /* IBAOverviewTableViewCell.swift in Sources */,
 				930B4C191C3AEC1E008D22D8 /* IBAContact.swift in Sources */,
