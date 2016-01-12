@@ -7,15 +7,19 @@
 //
 
 import Contacts
+import UIKit
 
 class IBAContact {
     
     // MARK: properties
     
     var name: String
-    var optionalImageData: NSData?
+    var optionalProfileImage: UIImage?
     var dateLastContacted: NSDate?
     var desiredContactInterval: NSDateComponents?
+    
+    var timePeriodQuantityIndex: Int?
+    var timePeriodTypeIndex: Int?
     
     // MARK: initialization
     
@@ -26,7 +30,9 @@ class IBAContact {
             self.name = "\(contact.givenName) \(contact.familyName)"
         }
         
-        self.optionalImageData = contact.thumbnailImageData
+        if let imageData = contact.thumbnailImageData {
+            self.optionalProfileImage = UIImage(data: imageData)
+        }
         
         if name.isEmpty {
             return nil

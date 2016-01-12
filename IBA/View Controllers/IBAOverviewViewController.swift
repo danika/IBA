@@ -31,6 +31,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         lastContactedDatePicker.backgroundColor = UIColor.whiteColor()
         lastContactedDatePicker.datePickerMode = UIDatePickerMode.Date
         lastContactedDatePicker.addTarget(self, action: "updateTextField", forControlEvents: UIControlEvents.ValueChanged)
+        lastContactedDatePicker.maximumDate = NSDate()
         
         for storedContact in AppDelegate.getAppDelegate().appData.storedContacts {
             contactViewModels.append(IBAContactViewModel(contact: storedContact))
@@ -64,11 +65,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
         let contact = AppDelegate.getAppDelegate().appData.storedContacts[indexPath.row]
         let viewModel = self.contactViewModels[indexPath.row]
         
-        if let thumbnail = viewModel.thumbnail {
-            cell.thumbnailView.image = thumbnail
-        } else {
-            cell.thumbnailView.image = nil
-        }
+        cell.thumbnailView.image = contact.optionalProfileImage
         cell.nameLabel.text = contact.name
         cell.colorView.backgroundColor = viewModel.color
         
@@ -145,14 +142,12 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
             
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
-            NSLog("Cancel Button Pressed")
         }
         alertController.addAction(ok)
         alertController.addAction(cancel)
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             self.lastContactedTextField = textField
             self.lastContactedTextField?.text = self.dateFormatter.stringFromDate(NSDate())
-            
             self.lastContactedDatePicker.date = NSDate()
             self.lastContactedTextField?.inputView = self.lastContactedDatePicker
             
@@ -176,12 +171,6 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    @IBAction func cancelEdits(segue:UIStoryboardSegue) {
-    }
-    
-    @IBAction func saveContact(segue:UIStoryboardSegue) {
-    }
-    
-    @IBAction func deleteContact(segue:UIStoryboardSegue) {
+    @IBAction func returnToOverviewFromEdit(segue:UIStoryboardSegue) {
     }
 }

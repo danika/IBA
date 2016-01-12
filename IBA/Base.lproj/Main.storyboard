@@ -122,7 +122,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erv-eL-680" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
-                                <rect key="frame" x="120" y="395.5" width="135" height="49"/>
+                                <rect key="frame" x="120" y="395" width="135" height="49"/>
                                 <color key="backgroundColor" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,8 +139,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We understand—some people are special. You can customize the length of an age for individual friends on the next page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZU-tM-ETb">
-                                <rect key="frame" x="48" y="584" width="279" height="50.5"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="14"/>
+                                <rect key="frame" x="50.5" y="591.5" width="274.5" height="43"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -186,20 +186,20 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QZz-zC-kXx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QZz-zC-kXx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="OverviewTableViewCell" id="h8s-dH-OgR" customClass="IBAOverviewTableViewCell" customModule="IBA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8s-dH-OgR" id="fic-mk-sm5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-R4-ovH">
-                                                    <rect key="frame" x="16" y="13" width="45" height="45"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-R4-ovH">
+                                                    <rect key="frame" x="16" y="22" width="45" height="45"/>
                                                     <color key="backgroundColor" red="0.3803921569" green="0.50196078430000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Yzl-R4-ovH" secondAttribute="height" multiplier="1:1" id="WPm-5O-6fQ"/>
@@ -207,24 +207,24 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Danika Suggs" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-y5-vag">
-                                                    <rect key="frame" x="69" y="16" width="105.5" height="19.5"/>
+                                                    <rect key="frame" x="69" y="22" width="105.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last seen: 1/1/2016" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjx-YL-idX">
-                                                    <rect key="frame" x="69" y="43" width="103.5" height="11"/>
+                                                    <rect key="frame" x="69" y="49" width="103.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="12"/>
                                                     <color key="textColor" red="0.3803921569" green="0.50196078430000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="visit by: 1/1/2016" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx1-LG-KBB">
-                                                    <rect key="frame" x="213" y="43" width="92.5" height="11"/>
+                                                    <rect key="frame" x="213" y="43" width="92.5" height="30.5"/>
                                                     <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="12"/>
                                                     <color key="textColor" red="0.3803921569" green="0.50196078430000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6k-Id-NdD">
-                                                    <rect key="frame" x="314" y="12" width="45" height="45"/>
+                                                    <rect key="frame" x="314" y="22" width="45" height="45"/>
                                                     <color key="backgroundColor" red="0.47843137250000001" green="0.74901960779999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="3dd-pg-Uy6"/>
@@ -233,17 +233,19 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="pjx-YL-idX" firstAttribute="bottom" secondItem="Yzl-R4-ovH" secondAttribute="bottom" id="4SH-Vm-dMH"/>
                                                 <constraint firstItem="KuW-y5-vag" firstAttribute="leading" secondItem="Yzl-R4-ovH" secondAttribute="trailing" constant="8" id="4gV-5X-adu"/>
                                                 <constraint firstItem="Yzl-R4-ovH" firstAttribute="centerY" secondItem="fic-mk-sm5" secondAttribute="centerY" id="64O-ow-jv4"/>
                                                 <constraint firstItem="f6k-Id-NdD" firstAttribute="leading" secondItem="cx1-LG-KBB" secondAttribute="trailing" constant="8" id="AQF-fz-a8T"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pjx-YL-idX" secondAttribute="bottom" constant="8" id="Owf-8D-Vwu"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Yzl-R4-ovH" secondAttribute="bottom" constant="8" id="G0p-ye-aFF"/>
+                                                <constraint firstItem="KuW-y5-vag" firstAttribute="top" secondItem="Yzl-R4-ovH" secondAttribute="top" id="RzG-8H-Zog"/>
                                                 <constraint firstItem="cx1-LG-KBB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pjx-YL-idX" secondAttribute="trailing" constant="16" id="Swg-5O-08Y"/>
                                                 <constraint firstItem="f6k-Id-NdD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KuW-y5-vag" secondAttribute="trailing" constant="8" id="UYr-Kd-83l"/>
                                                 <constraint firstItem="f6k-Id-NdD" firstAttribute="centerY" secondItem="fic-mk-sm5" secondAttribute="centerY" id="VhX-YP-PQ2"/>
-                                                <constraint firstItem="KuW-y5-vag" firstAttribute="top" secondItem="fic-mk-sm5" secondAttribute="topMargin" constant="8" id="XKa-FF-qO5"/>
                                                 <constraint firstItem="pjx-YL-idX" firstAttribute="top" secondItem="KuW-y5-vag" secondAttribute="bottom" constant="8" id="Z1s-bH-4WE"/>
                                                 <constraint firstItem="cx1-LG-KBB" firstAttribute="centerY" secondItem="pjx-YL-idX" secondAttribute="centerY" id="aXZ-J3-IMT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="f6k-Id-NdD" secondAttribute="trailing" constant="8" id="bSo-Et-isl"/>
+                                                <constraint firstItem="Yzl-R4-ovH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fic-mk-sm5" secondAttribute="topMargin" constant="8" id="dNc-j7-bZ4"/>
                                                 <constraint firstItem="Yzl-R4-ovH" firstAttribute="leading" secondItem="fic-mk-sm5" secondAttribute="leadingMargin" constant="8" id="hrg-j5-bH8"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cx1-LG-KBB" secondAttribute="bottom" constant="8" id="n0l-Bt-T3F"/>
                                                 <constraint firstItem="pjx-YL-idX" firstAttribute="leading" secondItem="Yzl-R4-ovH" secondAttribute="trailing" constant="8" id="rqc-4e-yGY"/>
@@ -309,7 +311,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdZ-JC-WiO">
                                 <rect key="frame" x="79" y="39" width="215.5" height="187"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slr-ab-JAp">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slr-ab-JAp">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.3803921569" green="0.50196078430000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -317,6 +319,10 @@
                                             <constraint firstAttribute="width" constant="100" id="yZC-iE-1lM"/>
                                         </constraints>
                                     </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nEf-uZ-tgb">
+                                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                        <color key="color" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eZ-XV-Iaf" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
                                         <rect key="frame" x="120" y="6" width="95.5" height="39"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -325,7 +331,7 @@
                                         <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12"/>
                                         <state key="normal" title="CHANGE"/>
                                         <connections>
-                                            <action selector="setForEveryoneButtonTapped:" destination="dk8-TM-YYO" eventType="touchUpInside" id="aON-xg-OFE"/>
+                                            <action selector="changeProfileImage:" destination="yyI-ty-E6N" eventType="touchUpInside" id="zo3-vr-SaW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93u-Jv-zSe" customClass="IBARoundedButton" customModule="IBA" customModuleProvider="target">
@@ -336,7 +342,7 @@
                                         <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12"/>
                                         <state key="normal" title="REMOVE"/>
                                         <connections>
-                                            <action selector="setForEveryoneButtonTapped:" destination="dk8-TM-YYO" eventType="touchUpInside" id="tS1-qT-ffh"/>
+                                            <action selector="removeProfileImage:" destination="yyI-ty-E6N" eventType="touchUpInside" id="CPM-Jt-YNc"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Danika Suggs" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VPu-Wd-hBD">
@@ -353,7 +359,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD/YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKg-jf-W6u">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD/YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKg-jf-W6u">
                                         <rect key="frame" x="92" y="157" width="123.5" height="30"/>
                                         <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -372,6 +378,7 @@
                                     <constraint firstItem="Slr-ab-JAp" firstAttribute="top" secondItem="WdZ-JC-WiO" secondAttribute="top" id="Clm-ON-dyy"/>
                                     <constraint firstItem="VPu-Wd-hBD" firstAttribute="leading" secondItem="WdZ-JC-WiO" secondAttribute="leading" id="Em9-a6-NiG"/>
                                     <constraint firstItem="93u-Jv-zSe" firstAttribute="width" secondItem="6eZ-XV-Iaf" secondAttribute="width" id="JIQ-vZ-pqc"/>
+                                    <constraint firstItem="nEf-uZ-tgb" firstAttribute="centerX" secondItem="Slr-ab-JAp" secondAttribute="centerX" id="JdM-KL-I1n"/>
                                     <constraint firstAttribute="trailing" secondItem="6eZ-XV-Iaf" secondAttribute="trailing" id="PIR-oz-MFN"/>
                                     <constraint firstItem="93u-Jv-zSe" firstAttribute="bottom" secondItem="Slr-ab-JAp" secondAttribute="bottom" constant="-6" id="YZx-K3-K9Y"/>
                                     <constraint firstAttribute="bottom" secondItem="QKg-jf-W6u" secondAttribute="bottom" id="bKQ-g9-CNb"/>
@@ -383,6 +390,7 @@
                                     <constraint firstItem="QKg-jf-W6u" firstAttribute="leading" secondItem="Yv5-x5-GPa" secondAttribute="trailing" constant="16" id="qBT-Uw-2Ob"/>
                                     <constraint firstItem="Yv5-x5-GPa" firstAttribute="top" secondItem="VPu-Wd-hBD" secondAttribute="bottom" constant="16" id="rTc-Uq-hPX"/>
                                     <constraint firstItem="6eZ-XV-Iaf" firstAttribute="leading" secondItem="Slr-ab-JAp" secondAttribute="trailing" constant="20" id="uxp-se-Bo8"/>
+                                    <constraint firstItem="nEf-uZ-tgb" firstAttribute="centerY" secondItem="Slr-ab-JAp" secondAttribute="centerY" id="z5v-IB-SZa"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -412,8 +420,7 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                 <state key="normal" title="DELETE PERSON"/>
                                 <connections>
-                                    <action selector="setForEveryoneButtonTapped:" destination="dk8-TM-YYO" eventType="touchUpInside" id="wgh-ca-dVf"/>
-                                    <segue destination="h29-xo-Fxj" kind="unwind" identifier="deleteContact" unwindAction="deleteContact:" id="cLm-Xo-DKU"/>
+                                    <action selector="deleteContact:" destination="yyI-ty-E6N" eventType="touchUpInside" id="8Zh-LK-wB4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -437,23 +444,25 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="B0x-oQ-16m">
                             <color key="tintColor" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="h29-xo-Fxj" kind="unwind" identifier="cancelEdits" unwindAction="cancelEdits:" id="3cA-Fl-uLk"/>
+                                <segue destination="h29-xo-Fxj" kind="unwind" identifier="returnToOverviewFromEdit" unwindAction="returnToOverviewFromEdit:" id="zRc-KX-5Zo"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="TKu-PD-jcd">
                             <color key="tintColor" red="0.51372549020000002" green="0.85098039219999999" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="h29-xo-Fxj" kind="unwind" identifier="saveContact" unwindAction="saveContact:" id="e79-1E-MIJ"/>
+                                <action selector="saveContact:" destination="yyI-ty-E6N" id="zbj-Q4-pdY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="changeButton" destination="6eZ-XV-Iaf" id="27E-gt-WdF"/>
                         <outlet property="contactIntervalPickerView" destination="3M6-Cs-8tH" id="VST-d1-knB"/>
                         <outlet property="lastContactedTextField" destination="QKg-jf-W6u" id="jkc-2J-cZM"/>
                         <outlet property="nameTextField" destination="VPu-Wd-hBD" id="ChR-dA-qZ2"/>
                         <outlet property="navItem" destination="Ggc-Ng-93J" id="Fgv-Fh-MbN"/>
                         <outlet property="profileImageView" destination="Slr-ab-JAp" id="4AW-jj-1lK"/>
+                        <outlet property="spinner" destination="nEf-uZ-tgb" id="d1R-kF-nlx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiT-Kx-vYj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -105,6 +105,8 @@ class IBAContactIntervalSetupViewController: UIViewController, UIPickerViewDataS
         
         for storedContact in AppDelegate.getAppDelegate().appData.storedContacts {
             storedContact.desiredContactInterval = timeInterval
+            storedContact.timePeriodQuantityIndex = self.contactIntervalPickerView.selectedRowInComponent(0)
+            storedContact.timePeriodTypeIndex = self.contactIntervalPickerView.selectedRowInComponent(1)
         }
         
         self.performSegueWithIdentifier("moveToOverview", sender: self)
