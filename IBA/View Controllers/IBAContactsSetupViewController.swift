@@ -45,11 +45,7 @@ class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate 
             
         case .Denied, .NotDetermined:
             self.contactStore.requestAccessForEntityType(CNEntityType.Contacts, completionHandler: { (access, accessError) -> Void in
-                if access {
-                    completionHandler(accessGranted: access)
-                } else if authorizationStatus == CNAuthorizationStatus.Denied {
-                    completionHandler(accessGranted: false)
-                }
+                completionHandler(accessGranted: access)
             })
         default:
             completionHandler(accessGranted: false)
@@ -59,17 +55,17 @@ class IBAContactsSetupViewController: UIViewController, CNContactPickerDelegate 
     // MARK: button behavior
     
     @IBAction func addContactsButtonTapped(sender: AnyObject) {
-        //why is this a problem?
-        
-//        self.requestAccess { (accessGranted) -> Void in
-//            if accessGranted {
-//                let contactPickerViewController = CNContactPickerViewController()
-//                contactPickerViewController.delegate = self
-//                self.presentViewController(contactPickerViewController, animated: true, completion: nil)
-//            } else {
-                self.performSegueWithIdentifier("addContact", sender: self)
-//            }
-//        }
+        self.requestAccess { (accessGranted) -> Void in
+            if accessGranted {
+                let contactPickerViewController = CNContactPickerViewController()
+                contactPickerViewController.delegate = self
+                self.presentViewController(contactPickerViewController, animated: true, completion: nil)
+            } else {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.performSegueWithIdentifier("addContact", sender: self)
+                })
+            }
+        }
     }
     
     // MARK: CNContactPickerDelegate

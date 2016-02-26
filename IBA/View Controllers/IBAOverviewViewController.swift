@@ -40,6 +40,7 @@ class IBAOverviewViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.tableView.tableFooterView = UIView()
     }
     
